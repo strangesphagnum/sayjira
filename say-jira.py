@@ -8,6 +8,3 @@ def branch_name():
         for line in content:
             if "ref:" in line:
                 return line.split("/")[-1]
-
-
-print(get_active_branch_name())
