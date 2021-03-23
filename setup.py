@@ -1,5 +1,6 @@
 from setuptools import setup
 
+
 setup(
     name="say-jira",
     version="0.0.1",

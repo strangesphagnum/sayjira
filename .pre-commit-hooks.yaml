@@ -1,6 +1,6 @@
-  - id: say-jira
-    name: Say Jira
-    description: Adds a jira ticket to the beginning of a commit message
-    entry: commit-msg
-    language: python
-    types: [python]
+- id: say-jira
+  name: Say Jira
+  description: Adds a jira ticket to the beginning of a commit message
+  entry: commit-msg
+  language: python
+  types: [python]
