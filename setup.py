@@ -5,13 +5,11 @@ setup(
     name="say-jira",
     version="0.0.1",
     description="Adds a jira ticket to the beginning of a commit message",
-    author="Svyatoslav Blokhin",
+    author="strangesphagnum",
     keywords="git commit pre-commit hook commit msg message python",
     platforms=["Any"],
     packages=["say_jira"],
     scripts=["say-jira"],
-    include_package_data=True,
-    zip_safe=False,
     install_requires=[
     ],
     classifiers=[
