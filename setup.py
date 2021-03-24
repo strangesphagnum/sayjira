@@ -17,7 +17,7 @@ setup(
         "Development Status :: In Development",
         "Operating System :: OS Independent",
         "Programming Language :: Python"
-    ]
+    ],
     entry_points={
         "console_scripts": [
             "say-jira = say-jira.say-jira:main",
