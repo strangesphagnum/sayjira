@@ -11,6 +11,7 @@ setup(
     packages=["say-jira"],
     scripts=["say-jira"],
     install_requires=[
+        "pre-commit"
     ],
     classifiers=[
         "Development Status :: In Development",
@@ -18,8 +19,8 @@ setup(
         "Programming Language :: Python"
     ]
     entry_points={
-        'console_scripts': [
-            'say-jira = say-jira:main',
+        "console_scripts": [
+            "say-jira = say-jira:main",
         ]
     }
 )
