@@ -21,9 +21,11 @@ def get_jira_ticket(branch_name):
 
 def main():
     branch_name = get_branch_name()
-    jira_ticket = get_jira_ticket(branch_name)
     user_input = sys.argv[1]
-    return f"[{jira_ticket}] {user_input}"
+    jira_ticket = get_jira_ticket(branch_name)
+    if jira_ticket:
+        return f"[{jira_ticket}] {user_input}"
+    return user_input
     
 
 if __name__ == '__main__':
