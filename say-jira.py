@@ -25,7 +25,7 @@ def main():
     jira_ticket = get_jira_ticket(branch_name)
     if jira_ticket:
         return f"[{jira_ticket}] {user_input}"
-    return user_input
+    return f"nyanyanya {user_input}"
     
 
 if __name__ == '__main__':
