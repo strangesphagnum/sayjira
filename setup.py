@@ -14,7 +14,7 @@ setup(
         "pre-commit"
     ],
     classifiers=[
-        "Development Status :: In Development",
+        "Development Status :: Alpha",
         "Operating System :: OS Independent",
         "Programming Language :: Python"
     ],
