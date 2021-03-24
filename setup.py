@@ -9,7 +9,6 @@ setup(
     keywords="git commit pre-commit hook commit msg message python",
     platforms=["Any"],
     packages=["say-jira"],
-    scripts=["say-jira"],
     url="https://github.com/strangesphagnum/say-jira",
     install_requires=[
         "pre-commit"
