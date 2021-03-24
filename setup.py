@@ -8,7 +8,7 @@ setup(
     author="strangesphagnum",
     keywords="git commit pre-commit hook commit msg message python",
     platforms=["Any"],
-    packages=["say_jira"],
+    packages=["say-jira"],
     scripts=["say-jira"],
     install_requires=[
     ],
