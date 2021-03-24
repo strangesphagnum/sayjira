@@ -1,6 +1,6 @@
-- id: say-jira
+- id: sayjira
   name: Say Jira
   description: Adds a jira ticket to the beginning of a commit message
-  entry: say-jira
+  entry: sayjira
   language: text
   stages: [commit-msg]
