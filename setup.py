@@ -20,7 +20,7 @@ setup(
     ]
     entry_points={
         "console_scripts": [
-            "say-jira = say-jira:main",
+            "say-jira = say-jira.say-jira:main",
         ]
     }
 )
