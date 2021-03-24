@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
@@ -8,7 +8,7 @@ setup(
     author="strangesphagnum",
     keywords="git commit pre-commit hook commit msg message python",
     platforms=["Any"],
-    packages=["say-jira"],
+    packages=find_packages(include=['giticket']),
     url="https://github.com/strangesphagnum/say-jira",
     install_requires=[
         "pre-commit"
