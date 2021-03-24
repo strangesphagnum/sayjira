@@ -19,7 +19,7 @@ def get_jira_ticket(branch_name):
         return jira_ticket.group(0)
 
 
-def main(argv):
+def main(argv=None):
     branch_name = get_branch_name()
     user_input = sys.argv
     jira_ticket = get_jira_ticket(branch_name)
