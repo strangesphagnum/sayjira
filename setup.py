@@ -10,6 +10,7 @@ setup(
     platforms=["Any"],
     packages=["say-jira"],
     scripts=["say-jira"],
+    url="https://github.com/strangesphagnum/say-jira",
     install_requires=[
         "pre-commit"
     ],
