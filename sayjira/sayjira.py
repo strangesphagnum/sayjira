@@ -26,7 +26,7 @@ def main():
     branch = repo.head.reference
     jira_ticket = get_jira_ticket(branch.name)
     if jira_ticket:
-        update_commit_message(branch)
+        update_commit_message(branch, jira_ticket)
     
 
 if __name__ == '__main__':
