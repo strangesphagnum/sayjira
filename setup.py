@@ -3,8 +3,8 @@ from setuptools import setup, find_packages
 
 setup(
     name="sayjira",
-    version="0.0.2",
-    description="Adds a jira ticket to the beginning of a commit message",
+    version="0.0.3",
+    description="Adds a jira ticket from branch name to the beginning of a commit message",
     author="strangesphagnum",
     keywords="git commit pre-commit hook commit msg message python",
     platforms=["Any"],

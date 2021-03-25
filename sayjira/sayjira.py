@@ -22,7 +22,7 @@ def update_commit_message(branch, jira_ticket):
     new_message = repo.index.commit(f"[{jira_ticket}] {latest_message}")
 
 
-def main(argv=None):
+def main():
     branch = repo.head.reference
     jira_ticket = get_jira_ticket(branch.name)
     if jira_ticket:
