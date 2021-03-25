@@ -15,18 +15,18 @@ def get_jira_ticket(branch_name):
         return jira_ticket.group(0)
 
     
-def update_commit_message():
+def update_commit_message(branch, jira_ticket):
     commit = repo.head.commit
+    latest_message = branch.commit.message
     branch.commit = commit.parents[0]
-    print(branch.commit)
-    # new_message = repo.index.commit(f"new message")
+    new_message = repo.index.commit(f"[{jira_ticket}] {latest_message}")
 
 
 def main(argv=None):
     branch = repo.head.reference
-    jira_ticket = get_jira_ticket(str(branch))
+    jira_ticket = get_jira_ticket(branch.name)
     if jira_ticket:
-        update_commit_message()
+        update_commit_message(branch)
     
 
 if __name__ == '__main__':
