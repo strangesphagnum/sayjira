@@ -14,7 +14,7 @@ def get_jira_ticket(branch_name):
     
 def update_commit_message(branch, jira_ticket):
     message_path = sys.argv[1]
-    with open(message_path, "rw") as message_file:
+    with open(message_path, "w") as message_file:
         message = message_file.read()
         message_file.write(f"[{jira_ticket}] {message}")
 
