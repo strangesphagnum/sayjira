@@ -3,14 +3,10 @@ import re
 
 from pathlib import Path
 
+import git
 
-def get_branch_name():
-    head_dir = Path(".") / ".git" / "HEAD"
-    with head_dir.open("r") as git:
-        content = git.read().splitlines()
-        for line in content:
-            if "ref:" in line:
-                return line.split("/")[-1]
+
+repo = git.Repo(".")
 
 
 def get_jira_ticket(branch_name):
@@ -18,14 +14,19 @@ def get_jira_ticket(branch_name):
     if jira_ticket:
         return jira_ticket.group(0)
 
+    
+def update_commit_message():
+    commit = repo.head.commit
+    branch.commit = commit.parents[0]
+    print(branch.commit)
+    # new_message = repo.index.commit(f"new message")
+
 
 def main(argv=None):
-    branch_name = get_branch_name()
-    user_input = sys.argv
-    jira_ticket = get_jira_ticket(branch_name)
+    branch = repo.head.reference
+    jira_ticket = get_jira_ticket(str(branch))
     if jira_ticket:
-        return f"[{jira_ticket}] {user_input}"
-    return f"nyanyanya {user_input}"
+        update_commit_message()
     
 
 if __name__ == '__main__':
