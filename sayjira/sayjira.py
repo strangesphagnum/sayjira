@@ -23,6 +23,7 @@ def update_commit_message(message_path, jira_ticket):
 
 
 def main(argv=None):
+    branch = repo.head.reference
     jira_ticket = get_jira_ticket(branch.name)
     if jira_ticket:
         update_commit_message(sys.argv[1], jira_ticket)
