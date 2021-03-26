@@ -22,7 +22,7 @@ def update_commit_message(message, jira_ticket):
         message_file.write(f"[{jira_ticket}] {message_text}")
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("filenames", nargs="+")
     args = parser.parse_args(argv)
