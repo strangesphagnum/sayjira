@@ -15,18 +15,19 @@ def get_jira_ticket(branch_name):
         return jira_ticket.group(0)
 
 
-def update_commit_message(branch, jira_ticket):
-    commit = repo.head.commit
-    message = commit.message
-    commit.message = f"[{jira_ticket}] {message}"
+def update_commit_message(jira_ticket):
+    with open(sys.argv[1], "w") as message_file:
+        message = message_file.read()
+        message_file.write(f"[{jira_ticket}] {message}")
 
 
 def main():
     branch = repo.head.reference
     jira_ticket = get_jira_ticket(branch.name)
     if jira_ticket:
-        update_commit_message(branch, jira_ticket)
+        update_commit_message(jira_ticket)
     
 
 if __name__ == '__main__':
+    sys.stderr.write("This hook works")
     sys.exit(main())
