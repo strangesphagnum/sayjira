@@ -16,10 +16,13 @@ def get_jira_ticket(branch_name):
         return jira_ticket.group(0)
 
 
-def update_commit_message(message, jira_ticket):
-    with open(message, "w") as message_file:
-        message_text = message_file.read()
-        message_file.write(f"[{jira_ticket}] {message_text}")
+def update_commit_message(commit, jira_ticket):
+    print(message)
+    with open(commit, "w") as commit_file:
+        commit_content = commit_file.readlines()
+        message_text = commit_content[0]
+        commit_content[0] = (f"[{jira_ticket}] {message_text}")
+        commit_file.writelines(commit_content)
 
 
 def main(argv=None):
