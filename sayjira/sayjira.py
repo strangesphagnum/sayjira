@@ -14,12 +14,6 @@ def get_jira_ticket(branch_name):
     if jira_ticket:
         return jira_ticket.group(0)
 
-    
-# def update_commit_message(branch, jira_ticket):
-#     message_path = sys.argv[1]
-#     with open(message_path, "w") as message_file:
-#         message = message_file.read()
-#         message_file.write(f"[{jira_ticket}] {message}")
 
 def update_commit_message(branch, jira_ticket):
     commit = repo.head.commit
