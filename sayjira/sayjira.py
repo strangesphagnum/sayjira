@@ -17,7 +17,6 @@ def get_jira_ticket(branch_name):
 
 
 def update_commit_message(commit, jira_ticket):
-    print(commit)
     with open(commit, "w") as commit_file:
         commit_content = commit_file.readlines()
         message_text = commit_content[0]
