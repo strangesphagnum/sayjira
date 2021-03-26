@@ -1,5 +1,6 @@
 import sys
 import re
+import argparse
 
 from pathlib import Path
 
@@ -15,17 +16,20 @@ def get_jira_ticket(branch_name):
         return jira_ticket.group(0)
 
 
-def update_commit_message(jira_ticket):
-    with open(sys.argv[1], "w") as message_file:
-        message = message_file.read()
-        message_file.write(f"[{jira_ticket}] {message}")
+def update_commit_message(message, jira_ticket):
+    with open(message, "w") as message_file:
+        message_text = message_file.read()
+        message_file.write(f"[{jira_ticket}] {message_text}")
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("filenames", nargs="+")
+    args = parser.parse_args(argv)
     branch = repo.head.reference
     jira_ticket = get_jira_ticket(branch.name)
     if jira_ticket:
-        update_commit_message(jira_ticket)
+        update_commit_message(args.filenames[0], jira_ticket)
     
 
 if __name__ == '__main__':
