@@ -1,6 +1,5 @@
 import sys
 import re
-import argparse
 
 from pathlib import Path
 
@@ -16,24 +15,18 @@ def get_jira_ticket(branch_name):
         return jira_ticket.group(0)
 
 
-def update_commit_message(commit, jira_ticket):
-    with open(commit, "w") as commit_file:
-        commit_content = commit_file.readlines()
-        message_text = commit_content[0]
-        commit_content[0] = (f"[{jira_ticket}] {message_text}")
-        commit_file.writelines(commit_content)
+def update_commit_message(message_path, jira_ticket):
+    with open(message_path, "r+") as mf:
+        message_text = mf.read()
+        mf.seek(0, 0)
+        mf.write(f"[{jira_ticket}] {message_text}")
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser()
-    parser.add_argument("filenames", nargs="+")
-    args = parser.parse_args(argv)
-    branch = repo.head.reference
     jira_ticket = get_jira_ticket(branch.name)
     if jira_ticket:
-        update_commit_message(args.filenames[0], jira_ticket)
+        update_commit_message(sys.argv[0], jira_ticket)
     
 
 if __name__ == '__main__':
-    sys.stderr.write("This hook works")
     sys.exit(main())
