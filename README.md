@@ -1,7 +1,7 @@
 # Description
 A ridiculously simple pre-commit hook that parses and adds jira ticket from git branch to your commit messages.
 
-I.e: **[BEEP-666] {entered commit message}**
+I.e: **[BEEP-666] your commit message**
 
 # Pre-commit setup
 To be used with [pre-commit](https://pre-commit.com/) package manager installed.
