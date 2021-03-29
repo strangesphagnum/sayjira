@@ -10,7 +10,7 @@ repo = git.Repo(".")
 
 
 def get_jira_ticket(branch_name):
-    jira_ticket = re.match(r"((?<!([A-Z]\{1,10\})-\?)[A-Z]+-\d+)", branch_name)
+    jira_ticket = re.search(r"((?<!([A-Z]\{1,10\})-\?)[A-Z]+-\d+)", branch_name)
     if jira_ticket:
         return jira_ticket.group(0)
 
