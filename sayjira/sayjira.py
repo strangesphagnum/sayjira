@@ -18,7 +18,7 @@ def get_jira_ticket(branch_name):
 def update_commit_message(message_path, jira_ticket):
     with open(message_path, "r+") as mf:
         message_text = mf.read()
-        mf.seek(0, 0)
+        # mf.seek(0, 0)
         mf.write(f"[{jira_ticket}] {message_text}")
 
 
