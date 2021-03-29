@@ -6,10 +6,9 @@ I.e: **[BEEP-666] {entered commit message}**
 # Pre-commit setup
 To be used with [pre-commit](https://pre-commit.com/) package manager installed.
 
-### Enter commands in command line
+### Enter command in command line
 ```
-pre-commit install
-pre-commit install --hook-type prepare-commit-msg
+pre-commit install --hook-type pre-commit --hook-type prepare-commit-msg
 ```
 
 ### Provide repo inside pre-commit-config.yaml
