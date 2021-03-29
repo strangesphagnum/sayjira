@@ -17,9 +17,21 @@ Provide one of the [available versions](https://pypi.org/project/sayjira/).
 ```
 repos:
   - repo: https://github.com/strangesphagnum/sayjira
-    rev: 0.1.0
+    rev: 0.1.2
     hooks:
       - id: sayjira
 ```
+
+### Note
+If you provide stage to all your hooks i.e.:
+```
+repos:
+  - repo: https://github.com/strangesphagnum/sayjira
+    rev: 0.1.0
+    hooks:
+      - id: sayjira
+      - stages: [prepare-commit-msg]
+```
+Pre-commit won't run hooks twice
 
 That's it. Enjoy!
