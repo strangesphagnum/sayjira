@@ -27,7 +27,7 @@ If you provide stage to all your hooks i.e.:
 ```
 repos:
   - repo: https://github.com/strangesphagnum/sayjira
-    rev: 0.1.0
+    rev: 0.1.2
     hooks:
       - id: sayjira
       - stages: [prepare-commit-msg]
