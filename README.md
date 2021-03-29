@@ -27,7 +27,7 @@ repos:
 ```
 
 ### Note
-If you provide stage to all your hooks i.e.:
+If you provide stage to all your hooks like:
 ```
 repos:
   - repo: https://github.com/strangesphagnum/sayjira
